@@ -59,17 +59,15 @@ public class PumpControlUnit {
 
         if (LowRatePump.class.equals(pumpClass)) {
             pump = lowRatePump;
-            if (start) {
-                lowRatePump.startPumping();
-            } else {
-                lowRatePump.stopPumping();
-            }
         } else if (HighRatePump.class.equals(pumpClass)) {
             pump = highRatePump;
+        }
+
+        if (pump != null) {
             if (start) {
-                highRatePump.startPumping();
+                pump.startPumping();
             } else {
-                highRatePump.stopPumping();
+                pump.stopPumping();
             }
         }
 
